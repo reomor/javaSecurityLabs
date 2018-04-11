@@ -1,6 +1,8 @@
 # IDEs and editors
 /**/target/**/*
 /**/.idea/**/*
+*.iml
+/**/.mvn/**/*
 
 # System Files
 .DS_Store
