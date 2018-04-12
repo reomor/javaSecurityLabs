@@ -11,5 +11,6 @@
 
     <modules>
         <module>lab-01-xxe</module>
+        <module>lab-02-deserialization</module>
     </modules>
 </project>
