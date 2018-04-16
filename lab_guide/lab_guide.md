@@ -78,8 +78,8 @@ _Как происходит обработка счёта?_
 обработку счетов. _Как происходит обработка XML в приложении?_
 2. Отключите поддержку DTD (и, соответсвенно, поддержку внешних сущностей).
 ```Java
-DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
-dbfactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+dbFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 ```
 3. Загрузите в приложение счёт с XXE. _Что произошло?_
 4. Запустите Unit-тесты. Проанализируйте результаты их выполнения. Проверьте,
