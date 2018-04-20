@@ -1,4 +1,4 @@
-package edu.otib.lab01xxe;
+package edu.otib.lab_xxe;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class Lab01XxeApplicationTests {
+public class LabXxeApplicationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;

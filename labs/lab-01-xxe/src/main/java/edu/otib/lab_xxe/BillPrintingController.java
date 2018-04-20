@@ -1,6 +1,6 @@
-package edu.otib.lab01xxe;
+package edu.otib.lab_xxe;
 
-import edu.otib.lab01xxe.model.Product;
+import edu.otib.lab_xxe.model.Product;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;

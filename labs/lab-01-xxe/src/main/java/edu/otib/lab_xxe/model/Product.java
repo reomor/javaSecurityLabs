@@ -1,4 +1,4 @@
-package edu.otib.lab01xxe.model;
+package edu.otib.lab_xxe.model;
 
 public class Product {
     private String name;

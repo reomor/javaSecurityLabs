@@ -21,9 +21,6 @@ public class LabDeserializationTests {
 
     @Test
     public void testJsonDeserialization() throws Exception{
-        // eyJpZCI6LTE1MjM3MzM0NjEsIm5hbWUiOiJ0ZXN0In0=
-        // {"id":-1523733461,"name":"test"}
-
         ResponseEntity<String> response = restTemplate.
                 getForEntity("/ois?session=eyJpZCI6LTE1MjM3MzM0NjEsIm5hbWUiOiJ0ZXN0In0=", String.class);
 
