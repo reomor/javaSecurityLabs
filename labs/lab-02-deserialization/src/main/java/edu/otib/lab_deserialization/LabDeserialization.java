@@ -1,13 +1,13 @@
-package edu.otib.lab02deserialization;
+package edu.otib.lab_deserialization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Lab02Deserialization {
+public class LabDeserialization {
 
     public static void main(String[] args) {
         System.getProperties().setProperty("org.apache.commons.collections.enableUnsafeSerialization", "true");
-        SpringApplication.run(Lab02Deserialization.class, args);
+        SpringApplication.run(LabDeserialization.class, args);
     }
 }

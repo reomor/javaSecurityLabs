@@ -1,4 +1,4 @@
-package edu.otib.lab02deserialization.data;
+package edu.otib.lab_deserialization.data;
 
 import java.io.Serializable;
 
