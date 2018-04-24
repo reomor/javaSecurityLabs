@@ -12,6 +12,7 @@
     <modules>
         <module>lab-01-xxe</module>
         <module>lab-02-deserialization</module>
+        <module>lab-03-xss</module>
         <module>lab-04-sqli</module>
     </modules>
 </project>
