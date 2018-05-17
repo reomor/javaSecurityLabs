@@ -15,5 +15,6 @@
         <module>lab-03-xss</module>
         <module>lab-04-sqli</module>
         <module>lab-broken-access-control</module>
+        <module>lab-csrf</module>
     </modules>
 </project>
