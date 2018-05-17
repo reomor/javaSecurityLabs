@@ -14,5 +14,6 @@
         <module>lab-02-deserialization</module>
         <module>lab-03-xss</module>
         <module>lab-04-sqli</module>
+        <module>lab-known_vulns</module>
     </modules>
 </project>
