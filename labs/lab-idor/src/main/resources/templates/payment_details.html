@@ -7,6 +7,7 @@
 <body>
 <table>
     <tr><th>ID: </th><td th:text="${payment.id}">1</td></tr>
+    <tr><th>Payment Owner: </th><td th:text="${payment.user}">username</td></tr>
     <tr><th>Amount: </th><td th:text="${payment.amount}">100</td></tr>
     <tr><th>Description: </th><td th:text="${payment.description}">Description</td></tr>
 </table>
