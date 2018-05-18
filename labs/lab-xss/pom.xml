@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.otib</groupId>
-    <artifactId>lab-03-xss</artifactId>
+    <artifactId>lab-xss</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>lab-03-xss</name>
+    <name>lab-xss</name>
     <description>XSS - Cross Site Scripting</description>
 
     <parent>
