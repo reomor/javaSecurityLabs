@@ -17,5 +17,6 @@
         <module>lab-known_vulns</module>
         <module>lab-broken-access-control</module>
         <module>lab-csrf</module>
+        <module>lab-idor</module>
     </modules>
 </project>
