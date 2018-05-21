@@ -18,5 +18,6 @@
         <module>lab-broken-access-control</module>
         <module>lab-csrf</module>
         <module>lab-idor</module>
+        <module>lab-misconfiguration</module>
     </modules>
 </project>
