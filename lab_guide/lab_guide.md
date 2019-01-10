@@ -14,16 +14,28 @@
 
 ## <a name="environment"></a>Настройка окружения
 ### Настройка Burp Suite и Firefox
-1. Установить Firefox (<https://www.mozilla.org/ru/firefox/>)
-2. Скачать Burp Suite Community Edition __JAR__ file
+1. Установить Firefox\* (<https://www.mozilla.org/ru/firefox/>)
+2. Скачать Burp Suite\*\* Community Edition __JAR__ file
 (<https://portswigger.net/burp/communitydownload>) | 
 [Прямая ссылка](https://portswigger.net/burp/releases/download?product=community&type=jar)
 3. Запустить Burp Suite
  (<https://support.portswigger.net/customer/portal/articles/1783038-Installing_Launching%20Burp.html>)
-4. Сконфигурировать Firefox для работы с Burp
+4. Сконфигурировать Firefox для работы с Burp Suite
 (<https://support.portswigger.net/customer/portal/articles/1783055-Installing_Configuring%20your%20Browser.html>)
 5. Уберите _localhost_ и _127.0.0.1_ из списка адресов, на которые браузер
 заходит без прокси
+6. Отключите перехват исходяших HTTP-запросов в Burp Suite (по умолчанию после запуска всегда включён): Вкладка _Proxy -> Intercept -> Intercepter is on_ , нажать для отключения
+
+\* - Браузер Firefox необходим в данном курсе т.к. в нём отсутствует встроенная защита от XSS,
+ следовательно есть возможность наглядно и без лишних усложнений продемонстрировать выполнение
+  JavaScript-кода в контексте браузера. Также Firefox не использует системные настройки прокси,
+   что позволяет направить через прокси только необходимый нам трафик веб-приложения,
+    а не всей операционной системы. 
+
+\*\* - В данном курсе инструмент Burp Suite используется как MITM (Man-In-The-Middle) HTTP-Proxy
+ с возможностью отправлять вручную сформированные HTTP-пакеты.
+Более подробно ознакомиться с возможностями Burp Suite вы можете в документации на официальном сайте:
+ <https://portswigger.net/burp/documentation/contents>
 
 ### Настройка IntelliJ IDEA
 1. Скачать и установить IntelliJ IDEA Community Edition
@@ -154,7 +166,7 @@ __ПРЕДУПРЕЖДЕНИЕ: Возможно срабатывание ант
 ```
 java -jar ysoserial-master.jar CommonsCollections5 calc.exe > payload.bin
 ```
-7. Вставьте сгенерированный payload в Burp Suite (Вкладка Repeater -> ПКМ ->
+7. Вставьте сгенерированный payload в Burp Suite (Вкладка Repeater -> ПКМ (правая кнопка мыши) ->
   Paste From File)
 8. Закодируйте payload (Выделите всё -> ПКМ -> Send to Decoder ->
   Encode as __Base64__)
@@ -190,6 +202,7 @@ User webUser = mapper.readValue(byteSession, User.class);
 ## <a name="xss"></a>Задание №3. Вывод информации пользователю
 ### Описание
 Рекомендуемым способом защиты от XSS-атак является:
+
 1. Осуществлять канонизацию/нормализацию данных (java.text.Normalizer.normalize()) до их валидации
 2. Осуществлять проверку передаваемых данных на соответствие белому списку допустимых значений (проверка значения по регулярному выражению) с учетом ограничений допустимой длины значения передаваемого параметра
 3. В случае необходимости сохранения спец. символов - осуществлять экранирование потенциально опасных символов (например, при передаче данных для формирования сценариев – например, JavaScript, формировании значений атрибутов HTML тэгов и иных ситуаций, в которых кодирование спец. символов может нарушить логику работы приложения). Рекомендуется выполнять экранирование в качестве дополнительной меры защиты даже в тех случаях, когда осуществляется проверка данных по белому списку.
