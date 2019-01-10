@@ -34,6 +34,8 @@ public class LabXxeApplicationTests {
 		assertThat(response.getBody()).contains("31337");
 	}
 
+	/*
+	// Security test
 	@Test
 	public void testXXEDefense() throws Exception{
 		LinkedMultiValueMap<String, Object> parameters = new LinkedMultiValueMap<>();
@@ -48,6 +50,6 @@ public class LabXxeApplicationTests {
 				"");
 
 		assertThat(response.getBody()).doesNotContain("XXETESTXXE");
-	}
+	}*/
 
 }
