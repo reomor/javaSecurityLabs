@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+        <!ELEMENT foo ANY>
+        <!ENTITY xxe "XXE Vulnarability Test">
+        <!ENTITY xxe2 "XXE Vulnarability Test 02">
+        ]>
+<bill>
+    <product id="26">
+        <name>&xxe;</name>
+        <quantity>0</quantity>
+        <price>0</price>
+    </product>
+    <product id="28">
+        <name>&xxe2;</name>
+        <quantity>1</quantity>
+        <price>1337</price>
+    </product>
+    <product id="30">
+        <name>Dev stuff</name>
+        <quantity>30</quantity>
+        <price>1000</price>
+    </product>
+</bill>

