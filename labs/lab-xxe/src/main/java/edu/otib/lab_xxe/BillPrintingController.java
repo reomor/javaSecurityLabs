@@ -47,7 +47,7 @@ public class BillPrintingController {
             // Process XML
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             // Preserve XXE-injection
-            dbFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            //dbFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(billXmlFile.getInputStream());

