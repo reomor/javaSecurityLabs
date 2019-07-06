@@ -1,5 +1,6 @@
 package edu.otib.lab_deserialization.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.otib.lab_deserialization.data.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,7 @@ public class HelloController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value={"", "/", "hello"})
+    @RequestMapping(value = {"", "/", "hello"})
     public String hello(
             @RequestParam(value = "name", required = false, defaultValue = "test") String name,
             Model model
@@ -28,11 +29,16 @@ public class HelloController {
         User webUser = new User(id, name);
         // Serialize Object
         try {
+            ObjectMapper mapper = new ObjectMapper();
+            final byte[] jsonBytes = mapper.writeValueAsBytes(webUser);
+/*
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(webUser);
             oos.close();
             String webUserOISB64 = Base64.getEncoder().encodeToString(baos.toByteArray());
+*/
+            String webUserOISB64 = Base64.getEncoder().encodeToString(jsonBytes);
             model.addAttribute("b64session", webUserOISB64);
         } catch (IOException ex) {
             log.error("IOException was thrown: " + ex.getMessage());
@@ -47,15 +53,19 @@ public class HelloController {
     ) {
         try {
             byte[] byteSession = Base64.getDecoder().decode(session);
+/*
             ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(byteSession));
             User webUser = (User) ois.readObject();
             ois.close();
+*/
+            ObjectMapper mapper = new ObjectMapper();
+            User webUser = mapper.readValue(byteSession, User.class);
             model.addAttribute("user", webUser);
         } catch (IOException ex) {
             log.error("IOException was thrown: " + ex.getMessage());
-        } catch (ClassNotFoundException ex) {
+        }/* catch (ClassNotFoundException ex) {
             log.error("ClassNotFoundException was thrown: " + ex.getMessage());
-        }
+        } //*/
         return "look_at_yourself.html";
     }
 }
